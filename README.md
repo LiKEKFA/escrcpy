@@ -1,6 +1,6 @@
 # Escrcpy
 
-
+# 此版本基于v3.3.1修改，仅移除更新功能
 
 📱 使用图形化的 Scrcpy 显示和控制您的 Android 设备 [中文文档](https://github.com/viarotel-org/escrcpy/blob/main/README-CN.md)
 
