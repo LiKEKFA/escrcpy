@@ -44,13 +44,6 @@ import Log from './components/log/index.vue'
 import Restart from './components/restart/index.vue'
 import Search from './components/search/index.vue'
 import Terminal from './components/terminal/index.vue'
-import Update from './components/update/index.vue'
-
-const props = defineProps({})
-
-const preferenceStore = usePreferenceStore()
-
-const { state, checkForUpdate } = useAppUpdate()
 
 const actionModel = computed(() => {
   const items = [
@@ -81,27 +74,7 @@ const actionModel = computed(() => {
     },
   ]
 
-  if (state.updateAvailable) {
-    items.unshift({
-      label: 'update.new-version',
-      tips: 'update.title',
-      fontIcon: 'i-bi-cloud-download-fill',
-      buttonProps: {
-        type: 'primary',
-        plain: true,
-        text: false,
-      },
-      component: Update,
-    })
-  }
-
   return items
-})
-
-onMounted(() => {
-  if (preferenceStore.data.autoCheckUpdate) {
-    checkForUpdate({ silent: true })
-  }
 })
 
 function handleCommand() {}

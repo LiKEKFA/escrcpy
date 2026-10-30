@@ -34,7 +34,6 @@ import {
   listenersService,
   shortcutsService,
   trayService,
-  updaterService,
 } from './services/index.js'
 
 import {
@@ -72,7 +71,6 @@ mainApp.use(listenersService)
 mainApp.use(handlesService)
 mainApp.use(trayService)
 mainApp.use(contextMenuService)
-mainApp.use(updaterService)
 mainApp.use(launchService)
 mainApp.use(shortcutsService)
 

@@ -10,19 +10,6 @@
       </div>
 
       <div class="pt-[4vh]">
-        <el-button
-          :loading="state.checking || state.downloading"
-          type="primary"
-          :size="$grid.lg ? 'large' : 'default'"
-          @click="handleUpdate"
-        >
-          {{
-            state.downloading && state.percent
-              ? `${$t("about.update.progress")}...（${state.percent.toFixed(1)}%）`
-              : $t("about.update")
-          }}
-        </el-button>
-
         <el-button :size="$grid.lg ? 'large' : 'default'" class="group" @click="onDocsClick">
           <span class="pl-1">{{ $t('about.docs.name') }}</span>
         </el-button>
@@ -54,8 +41,6 @@
 import { homepage, version } from '/package.json'
 import SponsorDialog from './components/sponsor-dialog/index.vue'
 
-const { state, checkForUpdate, openDialog } = useAppUpdate()
-
 const escrcpyURL = homepage
 const { language: locale } = useI18n()
 
@@ -75,15 +60,6 @@ function onDonateClick() {
 
 function onDocsClick() {
   window.open(docsUrl.value)
-}
-
-function handleUpdate() {
-  if (state.updateAvailable) {
-    openDialog()
-  }
-  else {
-    checkForUpdate()
-  }
 }
 </script>
 

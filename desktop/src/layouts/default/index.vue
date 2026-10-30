@@ -32,13 +32,11 @@
       </RouterView>
     </div>
   </div>
-  <AppUpdateDialog />
 </template>
 
 <script setup>
 import AppHeader from '$/components/app-header/index.vue'
 import QuickBar from '$/components/quick-bar/index.vue'
-import AppUpdateDialog from '$/hooks/use-app-update/dialog.vue'
 
 defineOptions({
   inheritAttrs: false,

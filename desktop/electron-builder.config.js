@@ -42,13 +42,6 @@ export default {
 
   npmRebuild: true,
 
-  publish: {
-    provider: 'github',
-    owner: 'viarotel-org',
-    repo: 'escrcpy',
-    updaterCacheDirName: 'escrcpy-updater',
-  },
-
   electronDownload: {
     mirror: resolveElectronMirror(),
   },

@@ -222,12 +222,5 @@ export default {
       value: undefined,
       placeholder: 'preferences.common.autoLaunch.placeholder',
     },
-    autoCheckUpdate: {
-      label: 'preferences.common.autoCheckUpdate.name',
-      field: 'autoCheckUpdate',
-      type: 'Switch',
-      value: true,
-      placeholder: 'preferences.common.autoCheckUpdate.placeholder',
-    },
   },
 }
