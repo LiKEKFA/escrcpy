@@ -1,76 +1,65 @@
-> [!IMPORTANT]
-> **I am currently seeking new career opportunities.** If you have a suitable opportunity, please contact me at [viarotel@foxmail.com](mailto:viarotel@foxmail.com).
-
-<div style="display:flex;">
-  <img src="https://cdn.jsdelivr.net/gh/viarotel/resources@latest/logos/escrcpy.png" alt="viarotel-escrcpy" width="108px">
-</div>
-
 # Escrcpy
 
-[![GitCode](https://gitcode.com/viarotel-org/escrcpy/star/badge.svg)](https://gitcode.com/viarotel-org/escrcpy)
-[![Gitee](https://gitee.com/viarotel-org/escrcpy/badge/star.svg?theme=dark)](https://gitee.com/viarotel-org/escrcpy)
-[![GitHub](https://img.shields.io/github/stars/viarotel-org/escrcpy?label=Github%20Stars)](https://github.com/viarotel-org/escrcpy)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/viarotel-org/escrcpy)
-[![zread](https://img.shields.io/badge/Ask_Zread-_.svg?style=flat&color=00b0aa&labelColor=000000&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuOTYxNTYgMS42MDAxSDIuMjQxNTZDMS44ODgxIDEuNjAwMSAxLjYwMTU2IDEuODg2NjQgMS42MDE1NiAyLjI0MDFWNC45NjAxQzEuNjAxNTYgNS4zMTM1NiAxLjg4ODEgNS42MDAxIDIuMjQxNTYgNS42MDAxSDQuOTYxNTZDNS4zMTUwMiA1LjYwMDEgNS42MDE1NiA1LjMxMzU2IDUuNjAxNTYgNC45NjAxVjIuMjQwMUM1LjYwMTU2IDEuODg2NjQgNS4zMTUwMiAxLjYwMDEgNC45NjE1NiAxLjYwMDFaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00Ljk2MTU2IDEwLjM5OTlIMi4yNDE1NkMxLjg4ODEgMTAuMzk5OSAxLjYwMTU2IDEwLjY4NjQgMS42MDE1NiAxMS4wMzk5VjEzLjc1OTlDMS42MDE1NiAxNC4xMTM0IDEuODg4MSAxNC4zOTk5IDIuMjQxNTYgMTQuMzk5OUg0Ljk2MTU2QzUuMzE1MDIgMTQuMzk5OSA1LjYwMTU2IDE0LjExMzQgNS42MDE1NiAxMy43NTk5VjExLjAzOTlDNS42MDE1NiAxMC42ODY0IDUuMzE1MDIgMTAuMzk5OSA0Ljk2MTU2IDEwLjM5OTlaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik0xMy43NTg0IDEuNjAwMUgxMS4wMzg0QzEwLjY4NSAxLjYwMDEgMTAuMzk4NCAxLjg4NjY0IDEwLjM5ODQgMi4yNDAxVjQuOTYwMUMxMC4zOTg0IDUuMzEzNTYgMTAuNjg1IDUuNjAwMSAxMS4wMzg0IDUuNjAwMUgxMy43NTg0QzE0LjExMTkgNS42MDAxIDE0LjM5ODQgNS4zMTM1NiAxNC4zOTg0IDQuOTYwMVYyLjI0MDFDMTQuMzk4NCAxLjg4NjY0IDE0LjExMTkgMS42MDAxIDEzLjc1ODQgMS42MDAxWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNCAxMkwxMiA0TDQgMTJaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00IDEyTDEyIDQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K&logoColor=ffffff)](https://zread.ai/viarotel-org/escrcpy)
 
-📱 Display and control your Android device graphically with scrcpy. [中文文档](https://github.com/viarotel-org/escrcpy/blob/main/README-CN.md)
+
+📱 使用图形化的 Scrcpy 显示和控制您的 Android 设备 [中文文档](https://github.com/viarotel-org/escrcpy/blob/main/README-CN.md)
 
 <div style="display:flex;">
   <img src="https://cdn.jsdelivr.net/gh/viarotel/resources@latest/screenshots/escrcpy/en-US/overview.png?version=3.0.8" alt="viarotel-escrcpy" width="100%">
 </div>
 
-<sub>Escrcpy focuses on a stable integration foundation; some advanced features come from the private extension repository EscrcpyX and are offered on a paid basis.</sub>
+<sub>Escrcpy 专注于稳定的集成底座能力；部分高级特性源自私有扩展仓库 EscrcpyX，以付费形式提供。</sub>
 
-## Features
+## 特点
 
-- 🖥️ **Inset Mirror**: Dedicated embedded window, auto-fits screen resolution and orientation, with integrated one-tap shortcuts
-- ⌨️ **Keyboard Mapping**: Configure touch, joystick, swipe, scroll, and automation mappings directly on the embedded mirror
-- 🔄 **Multi-Device Control**: Control multiple devices simultaneously in a single window, broadcast input, with batch screenshot and APK install support
-- 🎛️ **Integrated Control Bar**: Compact, draggable sidebar with reorderable controls: rotation, screenshot, apps, files, terminal, AI assistant, and automation
-- 🤖 **Copilot**: AI assistant built on MCP protocol for intelligent Android device control with multi-model chat support
-- 🏃 **Automation Script**: Visual step-by-step workflow orchestration with screen image recognition and batch execution across multiple devices
-- 🪟 **Multi-Device Management**: Visual window orchestration for centralized management of all connected devices
-- 📡 **Wireless Connection**: Wireless ADB connections with LAN auto-discovery and Gnirehtet reverse tethering support
-- 🔑 **Shortcut Management**: Customizable global hotkeys for quick device operations
-- ⚡ **Scrcpy Core**: High-performance, low-latency screen mirroring and control
+- 🖥️ **内嵌镜像**：独立内嵌窗口，自动适配分辨率与屏幕方向，内置一体化快捷操作
+- ⌨️ **键盘映射**：直接在内嵌镜像上配置点击、摇杆、滑动、滚动与自动化映射
+- 🔄 **多设备群控**：单窗口同控多台设备，广播输入，支持批量截图与 APK 安装
+- 🎛️ **集成控制栏**：可拖拽排序的紧凑侧边栏，涵盖旋转、截图、应用、文件、终端、自动操控与自动化
+- 🤖 **自动操控**：基于 MCP 协议深度融合构建的 自动操控，支持多模型对话与智能设备控制
+- 🏃 **自动化脚本**：图形化逐步编排工作流，支持屏幕识图条件判断与多设备批量执行
+- 🪟 **多设备管理**：可视化窗口编排，统一管理所有已连接设备
+- 📡 **无线连接**：无线 ADB 连接，支持局域网自动发现与 Gnirehtet 反向供网
+- 🔑 **快捷键管理**：可自定义的全局快捷键，快速执行设备操作
+- ⚡ **Scrcpy 内核**：高性能、低延迟屏幕镜像与控制
 
-## Installation
+## 安装
 
-### Manual Installation via Released Packages
+### 通过发布的软件包手动安装
 
-Check the [Releases Page](https://github.com/viarotel-org/escrcpy/releases)
+查看 [发布地址](https://github.com/viarotel-org/escrcpy/releases)
 
-### macOS Installation via Homebrew
+### macOS 可以通过 Homebrew 安装
 
-Refer to [homebrew-escrcpy](https://github.com/viarotel-org/homebrew-escrcpy)
+参阅 [homebrew-escrcpy](https://github.com/viarotel-org/homebrew-escrcpy)
 
-## Documentation
+## 文档
 
-- [Getting Started](https://viarotel.eu.org/guide/started)
-- [Shortcuts](https://viarotel.eu.org/reference/scrcpy/shortcuts)
-- [Device Operations](https://viarotel.eu.org/guide/operation)
-- [Preferences](https://viarotel.eu.org/guide/preferences)
-- [Reverse Tethering](https://viarotel.eu.org/reference/gnirehtet/)
+- [快速上手](https://viarotel.eu.org/zhHans/guide/started)
+- [快捷键](https://viarotel.eu.org/zhHans/reference/scrcpy/shortcuts)
+- [设备操作](https://viarotel.eu.org/zhHans/guide/operation)
+- [偏好设置](https://viarotel.eu.org/zhHans/guide/preferences)
+- [反向供网](https://viarotel.eu.org/zhHans/reference/gnirehtet/)
 
-## For Developers
+## 开发人员
 
-If you are a developer and wish to run or help improve this project, refer to the [Development Documentation](https://github.com/viarotel-org/escrcpy/blob/main/develop.md)
+如果你是开发人员，希望运行或帮助改进该项目请参阅 [开发文档](https://github.com/viarotel-org/escrcpy/blob/main/develop.md)
 
-## Get Help
+## 获得帮助
 
-As an open-source project powered by passion, support is limited, and updates are irregular.
+因为是开源项目 全靠爱发电 所以支持有限 更新节奏不固定
 
-- [FAQ](https://viarotel.eu.org/help/escrcpy)
-- [Report Issues](https://github.com/viarotel-org/escrcpy/issues)
-- [Contact Email](mailto:viarotel@qq.com)
+- [常见问题](https://viarotel.eu.org/zhHans/help/escrcpy)
+- [反馈问题](https://github.com/viarotel-org/escrcpy/issues)
+- [联系邮箱](mailto:viarotel@qq.com)
 
-## What's Next?
+## 下一步做什么？
 
-[Milestones](https://viarotel.eu.org/guide/milestones)
+[里程碑](https://viarotel.eu.org/zhHans/guide/milestones)
 
-## Acknowledgments
+## 致谢
 
-This project owes its existence to the following open-source projects:
+该项目的诞生离不开以下开源项目
 
 - [scrcpy](https://github.com/Genymobile/scrcpy)
 - [adbkit](https://github.com/DeviceFarmer/adbkit)
@@ -80,29 +69,13 @@ This project owes its existence to the following open-source projects:
 - [yadb](https://github.com/nicepkg/yadb)
 - [tangoadb](https://tangoadb.dev/)
 
-## Friendly Links
+## 友情链接
 
 - [ADB Device Manager 2](https://github.com/Shrey113/Adb-Device-Manager-2)
 - [FreeControl2](https://github.com/pdone/FreeControl2)
 
-## Donate
+## 贡献者
 
-If this project has helped you, consider buying me a coffee to keep me motivated for further improvements 😛
-
-<div style="display:flex;">
-  <img src="https://cdn.jsdelivr.net/gh/viarotel/resources@latest/donate/viarotel-wepay.png" alt="viarotel-wepay" width="30%">
-  <img src="https://cdn.jsdelivr.net/gh/viarotel/resources@latest/donate/viarotel-alipay.png" alt="viarotel-alipay" width="30%">
-  <a href="https://www.paypal.com/paypalme/viarotel" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn.jsdelivr.net/gh/viarotel/resources@latest/donate/viarotel-paypal.png" alt="viarotel-paypal" width="30%">
-  </a>
-</div>
-
-You can also support me through the AiFaDian platform.
-
-<div style="display:flex; justify-content:center;"> <a href="https://afdian.com/a/viarotel"><img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt=""></a> </div>
-
-## Contributors
-
-Thanks to all who contributed!
+感谢他们的所做的一切贡献！
 
 [Contributors](https://github.com/viarotel/escrcpy/graphs/contributors)
