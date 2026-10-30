@@ -1,0 +1,130 @@
+name: build-all
+
+# 触发方式：
+#   1) 推送形如 v3.3.2 的 tag -> 构建 Windows / macOS / Linux 全平台安装包，并附加到该 tag 的 Release
+#   2) Actions 页面手动 Run workflow -> 产物在该 run 的 Artifacts 里；填 release_tag 则同时附加到该 Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: '可选：要附加产物的 Release tag（如 v3.3.2）。留空则只上传 Actions Artifacts。'
+        required: false
+        default: ''
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-all-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: build-${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Linux: AppImage + deb + flatpak（x64 & arm64），需要 flatpak 工具链
+          - os: ubuntu-latest
+            platform: linux
+            build: build:linux
+          # macOS: dmg + zip（x64 & arm64），未签名
+          - os: macos-latest
+            platform: mac
+            build: build:mac
+          # Windows: nsis + portable + zip（x64 & arm64）
+          - os: windows-latest
+            platform: win
+            build: build:win
+
+    env:
+      NODE_OPTIONS: '--max-old-space-size=4096'
+      # 无签名证书：跳过证书自动查找，避免额外的工具下载与失败
+      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Enable pnpm
+        # 走 package.json 的 packageManager 字段（pnpm@10.29.2）
+        run: |
+          corepack enable
+          pnpm --version
+
+      - name: Install dependencies
+        # 仓库未提交 pnpm-lock.yaml，因此不能使用 --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Cache Flatpak runtime
+        if: matrix.platform == 'linux'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/share/flatpak
+            ~/.cache/flatpak
+          key: flatpak-${{ runner.os }}-25.08
+
+      - name: Install Flatpak toolchain
+        if: matrix.platform == 'linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y flatpak flatpak-builder libudev-dev
+          flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          flatpak --user install -y --noninteractive flathub \
+            org.freedesktop.Platform//25.08 \
+            org.freedesktop.Sdk//25.08 \
+            org.electronjs.Electron2.BaseApp//25.08
+
+      - name: Build ${{ matrix.platform }}
+        run: pnpm ${{ matrix.build }}
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: escrcpy-${{ matrix.platform }}
+          if-no-files-found: warn
+          retention-days: 14
+          path: |
+            desktop/dist-release/*.exe
+            desktop/dist-release/*.zip
+            desktop/dist-release/*.dmg
+            desktop/dist-release/*.AppImage
+            desktop/dist-release/*.deb
+            desktop/dist-release/*.flatpak
+
+  release:
+    name: publish-release
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/') || inputs.release_tag != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all platform artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: escrcpy-*
+          merge-multiple: true
+          path: artifacts
+
+      - name: Show collected files
+        run: ls -lh artifacts
+
+      - name: Attach artifacts to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.release_tag || github.ref_name }}
+          name: ${{ inputs.release_tag || github.ref_name }}
+          draft: false
+          fail_on_unmatched_files: false
+          files: artifacts/*
